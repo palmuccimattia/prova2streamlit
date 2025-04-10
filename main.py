@@ -2,7 +2,7 @@ import streamlit as st
 from openai import OpenAI
 
 # Configura la tua API key (puoi usare st.secrets per nasconderla in produzione)
-client = OpenAI(api_key="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")
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 def conta_negazioni_testo(testo):
     prompt = f"Conta quante negazioni contiene questo testo e scrivile come elenco: \"{testo}\""
